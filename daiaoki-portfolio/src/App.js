@@ -1,20 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
+import './css/App.css'
 
-class App extends Component {
+import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
+import ChatIcon from './components/layout/ChatIcon'
+import Top from './components/Top'
+import Services from './components/Services'
+
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <BrowserRouter>
+        <React.Fragment>
+          <Header/>
+          <main style={{marginTop: '30vw'}}>
+            <Route exact path='/'  component={Top}/>
+            <Route exact path='/services' component={Services}/>
+          </main>
+          <Footer/>
+          <ChatIcon/>
+        </React.Fragment>
+      </BrowserRouter>
+    )
   }
 }
 
