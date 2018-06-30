@@ -5,26 +5,25 @@ import Anchor from '../../styled-components/Anchor'
 
 const StyledHistory = styled.ul`
   list-style: none;
-  -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
-  float: right;
 `
 
 const HistoryList = styled.li`
-  margin-left: 6.5vw;
-  font-size: 13px;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
 `
 
 const HistoryAge = styled.span`
   display: inline-block;
-  height: 20vw;
   vertical-align: top;
+  line-height: 20px;
+  width: 20vw;
 `
 
 const HistoryEvent = styled.span`
   display: inline-block;
-  height: 100vw;
+  vertical-align: top;
+  line-height: 20px;
+  width: 64vw;
 `
 
 class History extends React.Component {
