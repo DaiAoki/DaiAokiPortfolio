@@ -16,14 +16,14 @@ const HistoryAge = styled.span`
   display: inline-block;
   vertical-align: top;
   line-height: 20px;
-  width: 20vw;
+  width: 22vw;
 `
 
 const HistoryEvent = styled.span`
   display: inline-block;
   vertical-align: top;
   line-height: 20px;
-  width: 64vw;
+  width: 62vw;
 `
 
 class History extends React.Component {
