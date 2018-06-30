@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "DaiAokiPortfolio",
+    "public": "daiaoki-portfolio/build",
     "ignore": [
       "firebase.json",
       "**/.*",
