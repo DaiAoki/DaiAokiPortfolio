@@ -26,6 +26,16 @@ const HistoryEvent = styled.span`
   width: 62vw;
 `
 
+const LeftCircle = styled.div`
+  position: absolute;
+  bottom: 10vw;
+  left: -10vw;
+  padding: 30vw;
+  border-radius: 50%;
+  background-color: #fdf5e6;
+  z-index: -1;
+`
+
 class History extends React.Component {
   constructor(props) {
     super(props);
@@ -43,6 +53,25 @@ class History extends React.Component {
     }
   };
 
+  componentDidMount() {
+    const config = {
+      origin:      'left',
+      distance:    '0',
+      duration:    1500,
+      delay:       300,
+      opacity:     0,
+      scale:       0.8,
+      easing:      'ease',
+      mobile:      true,
+      reset:       false,
+      userDelay:   'always',
+      viewFactore: 0.2,
+      viewOffset:  { top: 0, right: 0, bottom: 0, left: 0 },
+    }
+
+    window.sr.reveal('.history', config)
+  }
+
   render() {
     const histories = this.state.historyItems.map((history, i) => {
       return (
@@ -54,16 +83,17 @@ class History extends React.Component {
     });
 
     return (
-      <section className='u-mb-l'>
+      <section className='u-mb-l' style={{position: 'relative'}}>
         <Anchor className='u-mb-s'>
           <span>03.</span>
           <p>History</p>
         </Anchor>
         <Container>
-          <StyledHistory>
+          <StyledHistory className='history'>
             { histories }
           </StyledHistory>
         </Container>
+        <LeftCircle/>
       </section>
     )
   }

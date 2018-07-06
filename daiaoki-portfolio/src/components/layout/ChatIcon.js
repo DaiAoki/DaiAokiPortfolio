@@ -11,6 +11,7 @@ const StyledChatIcon = styled.div`
   border-radius: 50%;
   background: #20252e;
   padding: 8px;
+  z-index: 101;
 `
 
 class ChatIcon extends React.Component {

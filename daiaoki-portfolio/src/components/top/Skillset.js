@@ -49,6 +49,16 @@ const PaperCarouselItem = styled.span`
   }
 `
 
+const CenterCircle = styled.div`
+  position: absolute;
+  top: 18vw;
+  right: 16vw;
+  padding: 24vw;
+  border-radius: 50%;
+  background-color: #ffbfbf;
+  z-index: -1;
+`
+
 class Skillset extends React.Component {
   constructor(props) {
     super(props);
@@ -59,6 +69,25 @@ class Skillset extends React.Component {
                   {title: 'Other/Infra', items: ['Git', 'ShellScript', 'GAS', 'MySQL', 'AWS', 'Firebase', 'Heroku', 'Emacs', 'SEO']},
                  ]
     }
+  }
+
+  componentDidMount() {
+    const config = {
+      origin:      'right',
+      distance:    '200vw',
+      duration:    1500,
+      delay:       200,
+      opacity:     0,
+      scale:       1,
+      easing:      'ease',
+      mobile:      true,
+      reset:       false,
+      userDelay:   'always',
+      viewFactore: 0.2,
+      viewOffset:  { top: 0, right: 0, bottom: 0, left: 0 },
+    }
+
+    window.sr.reveal('.skillset', config)
   }
 
   render() {
@@ -74,16 +103,17 @@ class Skillset extends React.Component {
 
     // 年表は、縦書きにして自動で横スライドさせる。特筆すべきところで赤文字に変化させるなどのanimationを加える。
     return (
-      <section className='u-mb-l'>
+      <section className='u-mb-l' style={{position: 'relative'}}>
         <Anchor className='u-mb-s'>
           <span>02.</span>
           <p>Skillset</p>
         </Anchor>
         <Container>
-          <PaperCarousel>
+          <PaperCarousel className='skillset'>
             { skillsets }
           </PaperCarousel>
         </Container>
+        <CenterCircle/>
       </section>
     )
   }

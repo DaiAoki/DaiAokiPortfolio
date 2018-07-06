@@ -6,11 +6,13 @@ import About from './top/About'
 import Skillset from './top/Skillset'
 import History from './top/History'
 import LinkButton from './shared/LinkButton'
+import ScrollToTopOnMount from './shared/ScrollToTopOnMount'
 
 class Top extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <ScrollToTopOnMount/>
         <Heading nameEng={'Hello World!'} nameJa={'はろーわーるど!'}/>
         <About/>
         <Skillset/>

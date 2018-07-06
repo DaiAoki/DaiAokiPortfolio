@@ -5,6 +5,7 @@ const Paper = styled.div`
   box-shadow:0.5px 1px 1.5px #999;
   background-color: #fff;
   width: 100%;
+  z-index: 100;
 `
 
 export default Paper

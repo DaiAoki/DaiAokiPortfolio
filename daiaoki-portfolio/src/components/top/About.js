@@ -38,17 +38,57 @@ const SubHeading = styled.p`
   line-height: 20px;
 `
 
+const RightCircle = styled.div`
+  position: absolute;
+  top: -5vw;
+  right: -16vw;
+  padding: 24vw;
+  border-radius: 50%;
+  background-color: #a4dfcf;
+  z-index: 0;
+`
+
+const LeftCircle = styled.div`
+  position: absolute;
+  bottom: -5vw;
+  left: -16vw;
+  padding: 30vw;
+  border-radius: 50%;
+  background-color: #fffacd;
+  z-index: 0;
+`
+
 class About extends React.Component {
+
+  componentDidMount() {
+    const config = {
+      origin:      'left',
+      distance:    '200vw',
+      duration:    1500,
+      delay:       200,
+      opacity:     0,
+      scale:       2,
+      easing:      'ease',
+      mobile:      true,
+      reset:       false,
+      userDelay:   'always',
+      viewFactore: 0.2,
+      viewOffset:  { top: 0, right: 0, bottom: 0, left: 0 },
+    }
+
+    window.sr.reveal('.about', config)
+  }
+
   render() {
     return (
-      <section className='u-mb-l'>
+      <section className='u-mb-l' style={{position: 'relative'}}>
         <Anchor className='u-mb-s'>
           <span>01.</span>
           <p>About me</p>
         </Anchor>
         <Container>
           <Row>
-            <Paper>
+            <Paper className='about'>
               <div style={{width: '100%', height: '50vw'}}>
                 <img src={ profilePath } style={{borderTopLeftRadius: '4px', borderTopRightRadius: '4px', width: '100%', height: '100%', objectFit: 'cover'}}/>
               </div>
@@ -70,6 +110,8 @@ class About extends React.Component {
             </Paper>
           </Row>
         </Container>
+        <RightCircle/>
+        <LeftCircle/>
       </section>
     )
   }

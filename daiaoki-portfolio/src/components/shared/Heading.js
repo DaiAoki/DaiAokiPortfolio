@@ -16,9 +16,29 @@ const NameJa = styled.span`
 `
 
 class Heading extends React.Component {
+
+  componentDidMount() {
+    const config = {
+      origin:      'left',
+      distance:    '0',
+      duration:    2000,
+      delay:       100,
+      opacity:     0,
+      scale:       1,
+      easing:      'ease',
+      mobile:      true,
+      reset:       false,
+      userDelay:   'always',
+      viewFactore: 0.2,
+      viewOffset:  { top: 0, right: 0, bottom: 0, left: 0 },
+    }
+
+    window.sr.reveal('.heading', config)
+  }
+
   render() {
     return (
-      <section className='u-mb-l'>
+      <section className='heading u-mb-l'>
         <Container>
           <h1>
             <NameEng>{this.props.nameEng}</NameEng>

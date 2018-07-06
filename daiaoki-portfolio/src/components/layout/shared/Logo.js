@@ -32,7 +32,7 @@ class Logo extends React.Component {
     return (
       <Link to='/' style={logo}>
         <LogoIcon>D</LogoIcon>
-        <LogoLabel>DaiAoki</LogoLabel>
+        <LogoLabel>丸いエンジニア@ダイエット中</LogoLabel>
       </Link>
     )
   }
