@@ -20,8 +20,9 @@ class App extends React.Component {
       <BrowserRouter>
         <React.Fragment>
           <main style={{marginTop: '10vw', overflow: 'hidden', minHeight: '75vh'}}>
-            <Route exact path='/'  component={Top}/>
-            <Route exact path='/services' component={Services}/>
+            <Route exact path='/'           component={Top}/>
+            <Route exact path='/index.html' component={Top}/>
+            <Route exact path='/services'   component={Services}/>
           </main>
           <Footer/>
           <ChatIcon/>
