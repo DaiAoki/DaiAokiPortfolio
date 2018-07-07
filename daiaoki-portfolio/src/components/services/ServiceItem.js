@@ -1,5 +1,7 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import Paper from '../../styled-components/Paper'
+import MomentModal from '../shared/MomentModal'
 
 const tagStyle = {
   display: 'inline-block',
@@ -16,12 +18,12 @@ class ServiceItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isReleased: this.props.isReleased,
-      name:       this.props.name,
-      link:       this.props.link,
-      image:      this.props.image,
-      tags:       this.props.tags,
-      config:     this.props.config,
+      isReleased:   this.props.isReleased,
+      name:         this.props.name,
+      link:         this.props.link,
+      image:        this.props.image,
+      tags:         this.props.tags,
+      config:       this.props.config,
     }
     this.handleClick = this.handleClick.bind(this)
   }
@@ -46,7 +48,15 @@ class ServiceItem extends React.Component {
   }
 
   handleClick(e) {
-    if(this.state.isReleased === false) e.preventDefault()
+    if(this.state.isReleased === false) {
+      e.preventDefault()
+      ReactDOM.render(
+        <MomentModal byID={this.state.name} count={1500}>
+          <p style={{color: '#505050', fontSize: '1.6rem', lineHeight: '2.2rem'}}>{`${this.state.name}は準備中です。`}</p>
+        </MomentModal>,
+        document.getElementById(this.state.name)
+      )
+    }
   }
 
   render() {
@@ -57,20 +67,23 @@ class ServiceItem extends React.Component {
     })
 
     return (
-      <a href={this.state.link} target='_blank' className={this.state.name} style={{display: 'inline-block', width: '100%', marginBottom: '5vw'}}  onClick={(e) => this.handleClick(e)}>
-        <Paper>
-          <div style={{width: '100%', height: '50vw'}}>
-            <img src={ this.state.image } style={{borderTopLeftRadius: '4px', borderTopRightRadius: '4px', width: '100%', height: '100%', objectFit: 'fill'}}/>
-          </div>
-          <div style={{padding: '4vw', lineHeight: '26px'}}>
-            <h1 style={{fontSize: '1.7rem', textAlign: 'center', color: '#1f1b7a'}}>{ this.state.name }</h1>
-            <h2 style={{textAlign: 'center', textDecoration: 'underline', marginBottom: '11px'}}>{this.state.link}</h2>
-            <ul style={{listStyle: 'none'}}>
-              { tags }
-            </ul>
-          </div>
-        </Paper>
-      </a>
+      <React.Fragment>
+        <div id={`${this.state.name}`}/>
+        <a href={this.state.link} target='_blank' className={this.state.name} style={{display: 'inline-block', width: '100%', marginBottom: '5vw'}}  onClick={(e) => this.handleClick(e)}>
+          <Paper>
+            <div style={{width: '100%', height: '50vw'}}>
+              <img src={ this.state.image } style={{borderTopLeftRadius: '4px', borderTopRightRadius: '4px', width: '100%', height: '100%', objectFit: 'fill'}}/>
+            </div>
+            <div style={{padding: '4vw', lineHeight: '26px'}}>
+              <h1 style={{fontSize: '1.7rem', textAlign: 'center', color: '#1f1b7a'}}>{ this.state.name }</h1>
+              <h2 style={{textAlign: 'center', textDecoration: 'underline', marginBottom: '11px'}}>{this.state.link}</h2>
+              <ul style={{listStyle: 'none'}}>
+                { tags }
+              </ul>
+            </div>
+          </Paper>
+        </a>
+      </React.Fragment>
     )
   }
 }
