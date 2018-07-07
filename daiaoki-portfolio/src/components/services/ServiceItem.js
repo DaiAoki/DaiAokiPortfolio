@@ -130,21 +130,23 @@ class ServiceItem extends React.Component {
     })
 
     return (
-      <ServiceItemWrap href={this.state.link} target='_blank' className={this.state.name} onClick={(e) => this.handleClick(e)}>
+      <React.Fragment>
         <div id={`${this.state.name}`}/>
-        <Paper>
-          <ServiceImage>
-            <img src={ this.state.image } style={{borderTopLeftRadius: '4px', borderTopRightRadius: '4px', width: '100%', height: '100%', objectFit: 'fill'}}/>
-          </ServiceImage>
-          <ServiceInfo>
-            <ServiceTitle>{ this.state.name }</ServiceTitle>
-            <ServiceLink>{ this.state.link }</ServiceLink>
-            <ul style={{listStyle: 'none'}}>
-              { tags }
-            </ul>
-          </ServiceInfo>
-        </Paper>
-      </ServiceItemWrap>
+        <ServiceItemWrap href={this.state.link} target='_blank' className={this.state.name} onClick={(e) => this.handleClick(e)}>
+          <Paper>
+            <ServiceImage>
+              <img src={ this.state.image } style={{borderTopLeftRadius: '4px', borderTopRightRadius: '4px', width: '100%', height: '100%', objectFit: 'fill'}}/>
+            </ServiceImage>
+            <ServiceInfo>
+              <ServiceTitle>{ this.state.name }</ServiceTitle>
+              <ServiceLink>{ this.state.link }</ServiceLink>
+              <ul style={{listStyle: 'none'}}>
+                { tags }
+              </ul>
+            </ServiceInfo>
+          </Paper>
+        </ServiceItemWrap>
+      </React.Fragment>
     )
   }
 }
