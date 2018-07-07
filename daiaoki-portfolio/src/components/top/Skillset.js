@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../../styled-components/Container'
 import Anchor from '../../styled-components/Anchor'
 import styled from 'styled-components'
+import { media } from '../../helpers/Helper'
 
 const PaperCarousel = styled.ul`
   list-style: none;
@@ -23,30 +24,41 @@ const PaperCarouselList = styled.li`
   word-wrap: normal;
   white-space: normal;
   padding: 4vw;
-  line-height: 30px;
+  line-height: 3.0rem;
   border-radius: 4px;
   box-shadow:0.5px 1px 1.5px #999;
   background-color: #fff;
   &:last-child {
     margin-right: 8vw;
   }
+  ${ media.pc`
+    width: 30vw;
+    padding: 3vw;
+  `}
 `
 
 const PaperCarouselTitle = styled.h2`
   font-family: Trirong,serif;
+  font-size: 1.5rem;
   color: #20252e;
   letter-spacing: 2px;
   margin-bottom: 4px;
+  ${ media.pc`
+    font-size: 2.0rem;
+  `}
 `
 
 const PaperCarouselItem = styled.span`
   display: inline-block;
   color: #777;
   letter-spacing: 0.5px;
-  font-size: 15px;
+  font-size: 1.4rem;
   &:not(:last-child) {
     margin-right: 11px;
   }
+  ${ media.pc`
+    font-size: 1.6rem;
+  `}
 `
 
 const CenterCircle = styled.div`

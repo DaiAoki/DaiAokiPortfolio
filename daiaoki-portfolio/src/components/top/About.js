@@ -3,7 +3,6 @@ import profilePath from '../../images/profile.jpg'
 import styled from 'styled-components'
 import { media } from '../../helpers/Helper'
 import Container from '../../styled-components/Container'
-import Row from '../../styled-components/Row'
 import Paper from '../../styled-components/Paper'
 import Anchor from '../../styled-components/Anchor'
 
@@ -59,6 +58,25 @@ const LeftCircle = styled.div`
   z-index: 0;
 `
 
+const Row = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  > div {
+    ${ media.pc`
+      width: 50%;
+    `}
+  }
+`
+
+const ProfileImage = styled.div`
+  width: 100%;
+  height: 50vw;
+  ${ media.pc`
+    height: 25vw;
+  `}
+`
+
 class About extends React.Component {
 
   componentDidMount() {
@@ -90,9 +108,9 @@ class About extends React.Component {
         <Container>
           <Row>
             <Paper className='about'>
-              <div style={{width: '100%', height: '50vw'}}>
+              <ProfileImage>
                 <img src={ profilePath } style={{borderTopLeftRadius: '4px', borderTopRightRadius: '4px', width: '100%', height: '100%', objectFit: 'cover'}}/>
-              </div>
+              </ProfileImage>
               <div style={{padding: '4vw', lineHeight: '26px'}}>
                 <h1 style={{marginBottom: '2px'}}>
                   <Title>DaiAoki</Title>

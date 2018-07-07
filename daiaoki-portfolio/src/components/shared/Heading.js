@@ -1,18 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
+import { media } from '../../helpers/Helper'
 import Container from '../../styled-components/Container'
 
 const NameEng = styled.span`
-  font-size: 32px;
+  font-size: 3.2rem;
   font-weight: 300;
   letter-spacing: 2px;
+  ${ media.pc`
+    font-size: 4.5rem;
+    letter-spacing: 4px;
+  `}
 `
 
 const NameJa = styled.span`
-  font-size: 17px;
+  font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: 7px;
-  line-height: 32px;
+  line-height: 3.2rem;
+  ${ media.pc`
+    font-size: 2.0rem;
+  `}
 `
 
 class Heading extends React.Component {

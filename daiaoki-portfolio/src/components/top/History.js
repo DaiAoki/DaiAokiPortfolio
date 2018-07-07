@@ -1,15 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import { media } from '../../helpers/Helper'
 import Container from '../../styled-components/Container'
 import Anchor from '../../styled-components/Anchor'
 
 const StyledHistory = styled.ul`
   list-style: none;
+  ${ media.pc`
+    width: 30vw;
+    margin: 0 auto;
+  `}
 `
 
 const HistoryList = styled.li`
   font-size: 1.3rem;
   margin-bottom: 20px;
+  ${ media.pc`
+    font-size: 1.5rem;
+  `}
 `
 
 const HistoryAge = styled.span`
@@ -17,6 +25,9 @@ const HistoryAge = styled.span`
   vertical-align: top;
   line-height: 20px;
   width: 22vw;
+  ${ media.pc`
+    width: 10vw;
+  `}
 `
 
 const HistoryEvent = styled.span`
@@ -24,6 +35,9 @@ const HistoryEvent = styled.span`
   vertical-align: top;
   line-height: 20px;
   width: 62vw;
+  ${ media.pc`
+    width: 20vw;
+  `}
 `
 
 const LeftCircle = styled.div`
