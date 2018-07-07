@@ -2,12 +2,23 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import ScrollReveal from 'scrollreveal'
+import styled from 'styled-components'
 import './css/App.css'
 
 import Footer from './components/layout/Footer'
 import ChatIcon from './components/layout/ChatIcon'
 import Top from './components/Top'
 import Services from './components/Services'
+import { media } from './helpers/Helper'
+
+const Main = styled.main`
+  margin-top: 10vw;
+  overflow: hidden;
+  min-height: 75vh;
+  ${ media.pc`
+    margin-top: 4vw;
+  `}
+`
 
 class App extends React.Component {
 
@@ -19,11 +30,11 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <React.Fragment>
-          <main style={{marginTop: '10vw', overflow: 'hidden', minHeight: '75vh'}}>
+          <Main>
             <Route exact path='/'           component={Top}/>
             <Route exact path='/index.html' component={Top}/>
             <Route exact path='/services'   component={Services}/>
-          </main>
+          </Main>
           <Footer/>
           <ChatIcon/>
         </React.Fragment>

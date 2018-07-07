@@ -3,17 +3,24 @@ import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import chatIconPath from '../../images/chat.png'
 import MomentModal from '../shared/MomentModal'
+import { media } from '../../helpers/Helper'
 
 const StyledChatIcon = styled.div`
   position: fixed;
   bottom: 17vw;
   right: 7vw;
   width: 13vw;
+  max-width: 70px;
   height: 13vw;
+  max-height: 70px;
   border-radius: 50%;
   background: #20252e;
   padding: 8px;
   z-index: 101;
+  ${ media.pc`
+    bottom: 4vw;
+    right: 4vw;
+  `}
 `
 
 class ChatIcon extends React.Component {

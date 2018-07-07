@@ -1,6 +1,7 @@
 import React from 'react'
 import profilePath from '../../images/profile.jpg'
 import styled from 'styled-components'
+import { media } from '../../helpers/Helper'
 import Container from '../../styled-components/Container'
 import Row from '../../styled-components/Row'
 import Paper from '../../styled-components/Paper'
