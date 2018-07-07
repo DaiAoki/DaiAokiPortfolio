@@ -48,6 +48,10 @@ const LeftCircle = styled.div`
   border-radius: 50%;
   background-color: #fdf5e6;
   z-index: -1;
+  ${ media.pc`
+    left: 6vw;
+    padding: 14vw;
+  `}
 `
 
 class History extends React.Component {

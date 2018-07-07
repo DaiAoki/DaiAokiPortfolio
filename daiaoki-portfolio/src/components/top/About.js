@@ -46,6 +46,10 @@ const RightCircle = styled.div`
   border-radius: 50%;
   background-color: #a4dfcf;
   z-index: 0;
+  ${ media.pc`
+    right: -10vw;
+    padding: 14vw;
+  `}
 `
 
 const LeftCircle = styled.div`
@@ -56,6 +60,10 @@ const LeftCircle = styled.div`
   border-radius: 50%;
   background-color: #fffacd;
   z-index: 0;
+  ${ media.pc`
+    left: 10vw;
+    padding: 18vw;
+  `}
 `
 
 const Row = styled.div`

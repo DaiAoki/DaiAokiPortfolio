@@ -60,7 +60,7 @@ class Services extends React.Component {
           name:       'Anny',
           link:       'https://anny.gift',
           image:      annyPath,
-          tags:       ['チーム開発', 'EC', 'メディア', 'AWS', 'Rails4.2.5', 'Rails5.1.6', 'React', 'jQuery', 'Webpack', 'MySQL', 'ElasticSearch', 'Redis']
+          tags:       ['チーム開発', 'EC', 'メディア', 'AWS', 'Rails4.2.5', 'Rails5.1.6', 'React', 'jQuery', 'Webpack', 'MySQL', 'Docker', 'ElasticSearch', 'Redis']
         },
         {
           isReleased: true,
@@ -98,7 +98,7 @@ class Services extends React.Component {
       <React.Fragment>
         <ScrollToTopOnMount/>
         <Heading nameEng={'Services'} nameJa={'サービス'}/>
-        <Container>
+        <Container style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'stretch', alignContent: 'space-around'}}>
           { items }
         </Container>
         <LinkButton path={'/'} text={'Top Page'}/>

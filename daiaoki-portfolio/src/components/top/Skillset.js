@@ -69,6 +69,10 @@ const CenterCircle = styled.div`
   border-radius: 50%;
   background-color: #ffbfbf;
   z-index: -1;
+  ${ media.pc`
+    right: 10vw;
+    padding: 14vw;
+  `}
 `
 
 class Skillset extends React.Component {

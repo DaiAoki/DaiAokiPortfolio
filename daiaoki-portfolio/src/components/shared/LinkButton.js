@@ -23,9 +23,6 @@ const LinkContainer = styled.div`
     padding-bottom: 1.5rem;
     font-size: 2.4rem;
   `}
-  a {
-    display: block;
-  }
 `
 
 const BigCircle = styled.div`
@@ -36,6 +33,10 @@ const BigCircle = styled.div`
   border-radius: 50%;
   background-color: #dbdbdb;
   z-index: -1;
+  ${ media.pc`
+    bottom: -30vw;
+    padding: 22vw;
+  `}
 `
 
 class LinkButton extends React.Component {
@@ -43,9 +44,11 @@ class LinkButton extends React.Component {
     return (
       <section className='u-mb-l' style={{position: 'relative'}}>
         <Container style={{textAlign: 'center'}}>
-          <LinkContainer>
-            <Link to={this.props.path}>{this.props.text}</Link>
-          </LinkContainer>
+          <Link to={this.props.path}>
+            <LinkContainer>
+              {this.props.text}
+            </LinkContainer>
+          </Link>
         </Container>
         <BigCircle/>
       </section>

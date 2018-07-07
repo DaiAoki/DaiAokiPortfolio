@@ -12,11 +12,12 @@ import Services from './components/Services'
 import { media } from './helpers/Helper'
 
 const Main = styled.main`
-  margin-top: 10vw;
+  padding-top: 10vw;
   overflow: hidden;
   min-height: 75vh;
   ${ media.pc`
-    margin-top: 4vw;
+    padding-top: 4vw;
+    background-color: #fffafa;
   `}
 `
 
