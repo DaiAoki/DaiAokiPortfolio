@@ -64,7 +64,7 @@ class Skillset extends React.Component {
     super(props);
     this.state = {
       skillsets: [{title: 'Language', items: ['Ruby', 'C', 'Lisp', 'Java', 'PHP', 'Ruby on Rails4', 'Ruby on Rails5']},
-                  {title: 'Markup', items: ['HTML5', 'Haml', 'Slim', 'Sass', 'SCSS', 'CSS5']},
+                  {title: 'Markup', items: ['HTML5', 'Haml', 'Slim', 'Sass', 'SCSS', 'CSS3']},
                   {title: 'JS', items: ['JavaScript', 'React', 'Redux', 'Vue', 'jQuery']},
                   {title: 'Other/Infra', items: ['Git', 'ShellScript', 'GAS', 'MySQL', 'AWS', 'Firebase', 'Heroku', 'Emacs', 'SEO']},
                  ]
