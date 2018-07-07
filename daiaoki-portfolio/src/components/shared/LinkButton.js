@@ -23,6 +23,9 @@ const LinkContainer = styled.div`
     padding-bottom: 1.5rem;
     font-size: 2.4rem;
   `}
+  a {
+    display: block;
+  }
 `
 
 const BigCircle = styled.div`
