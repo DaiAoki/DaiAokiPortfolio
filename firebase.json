@@ -12,8 +12,8 @@
         "destination": "/index.html"
       },
       {
-        "source": "/contact", "function": "contact",
-        "destination": "/contact"
+        "source": "/contact",
+        "function": "contact"
       }
     ]
   }

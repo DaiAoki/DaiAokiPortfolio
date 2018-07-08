@@ -122,7 +122,7 @@ class ContactForm extends React.Component {
 
   successPost() {
     this.setState({postMsg: true})
-    this.visibleTimer = setTimeout(() => this.closeModal(), 1500)
+    this.visibleTimer = setTimeout(() => this.closeModal(), 3000)
   }
 
   handleSubmit(event) {
@@ -153,7 +153,11 @@ class ContactForm extends React.Component {
           <p style={{fontSize: '2.0rem', marginBottom: '20px'}}>お問い合わせありがとうございます！</p>
           <p style={{fontSize: '1.6rem', color: '#6b6b6b'}}>＊返信まで最大で2〜3日お時間をいただきます。</p>
         </Modal>
-        :
+      :
+        <Modal>
+          <p style={{fontSize: '2.0rem', marginBottom: '20px'}}>お問い合わせフォームは現在実装中です。SNSのメッセージにてお願いします。</p>
+        </Modal>
+        /*
         <Modal>
           <form style={{textAlign: 'center'}} onSubmit={this.handleSubmit}>
             <p style={{fontSize: '2.0rem', marginBottom: '20px'}}>お問い合わせフォーム</p>
@@ -169,6 +173,7 @@ class ContactForm extends React.Component {
             <FormSubmit type='submit' value='登録'/>
           </form>
         </Modal>
+        */
         ;
 
     const loading = this.state.isLoading ? <Loading/> : null
