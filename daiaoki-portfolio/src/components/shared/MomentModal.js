@@ -13,7 +13,7 @@ const Modal = styled.div`
   padding: 24px;
   max-height: 70%;
   width: 70%;
-  max-width: 300px;
+  max-width: 500px;
   margin: auto;
   overflow-y: auto;
   border-radius: 4px;

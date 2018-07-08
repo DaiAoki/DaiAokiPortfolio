@@ -1,4 +1,6 @@
 @import 'base/reset.css';
 @import 'base/base.css';
 @import 'app/service.css';
+@import 'app/form.css';
+@import 'app/loader.css';
 @import 'utility.css';

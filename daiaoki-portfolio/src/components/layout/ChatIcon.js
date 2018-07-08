@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import chatIconPath from '../../images/chat.png'
-import MomentModal from '../shared/MomentModal'
+import ContactForm from './chaticon/ContactForm'
 import { media } from '../../helpers/Helper'
 
 const StyledChatIcon = styled.div`
@@ -28,9 +28,7 @@ class ChatIcon extends React.Component {
   handleClick(e) {
     e.preventDefault()
     ReactDOM.render(
-      <MomentModal byID={'chatModal'}>
-        <p style={{color: '#505050', fontSize: '1.6rem', lineHeight: '2.2rem'}}>{'お問い合わせフォーム準備中。各種SNSのメッセージからお願いします。'}</p>
-      </MomentModal>,
+      <ContactForm/>,
       document.getElementById('chatModal')
     )
   }
