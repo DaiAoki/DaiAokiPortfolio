@@ -6,7 +6,7 @@ exports.contact = functions.https.onRequest((req, res) => {
   const name    = req.body.name
   const email   = req.body.email
   const message = req.body.message
-  return axios.post('', {
+  return axios.post(functions.config().slack.contact_url, {
     text: `From ${name}( ${email} )\n${message}`,
   })
     .then(res => {
