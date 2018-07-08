@@ -50,7 +50,7 @@ class MomentModal extends React.Component {
   }
 
   showModal() {
-    this.visibleTimer = setTimeout(() => this.closeModal(), this.state.count)
+    if(this.state.count) this.visibleTimer = setTimeout(() => this.closeModal(), this.state.count)
     document.body.style.overflow = 'hidden'
   }
 
@@ -66,7 +66,7 @@ class MomentModal extends React.Component {
         <Modal>
           { this.props.children }
         </Modal>
-        <ModalOverlay/>
+        <ModalOverlay onClick={() => this.closeModal()}/>
       </React.Fragment>
     );
   }

@@ -28,7 +28,7 @@ class ChatIcon extends React.Component {
   handleClick(e) {
     e.preventDefault()
     ReactDOM.render(
-      <MomentModal byID={'chatModal'} count={2500}>
+      <MomentModal byID={'chatModal'}>
         <p style={{color: '#505050', fontSize: '1.6rem', lineHeight: '2.2rem'}}>{'お問い合わせフォーム準備中。各種SNSのメッセージからお願いします。'}</p>
       </MomentModal>,
       document.getElementById('chatModal')
