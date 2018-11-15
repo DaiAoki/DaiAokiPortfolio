@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'PixelMplus12';
+  src: url(../font/PixelMplus12-Regular.ttf);
+}
+body {
+  font-family: PixelMplus12;
+}
