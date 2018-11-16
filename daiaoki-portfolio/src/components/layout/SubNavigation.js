@@ -3,11 +3,6 @@ import { render } from 'react-dom'
 import styled from 'styled-components'
 import COLORs from '../../shared/colors'
 import NUMBERs from '../../shared/number'
-import portfolio from '../../assets/images/portfolio.png'
-import anny from '../../assets/images/anny.png'
-import startupGit from '../../assets/images/startup-git.png'
-import whichone from '../../assets/images/whichone.png'
-import xmarket from '../../assets/images/no_image.png'
 
 const StyledSubNavigation = styled.nav`
   position: absolute;
@@ -38,25 +33,12 @@ const SubNavigationItem = styled.li`
   }
 `
 class SubNavigation extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      subNavigationItems: {
-        '/history': [
-          { name: 'ポートフォリオ',      url: 'https://daiaoki.me',         image: portfolio },
-          { name: 'Anny',                url: 'https://anny.gift/',         image: anny },
-          { name: 'スタートアップのGit', url: 'http://www.startup-git.com', image: startupGit },
-          { name: 'whichone',            url: 'localhost:3000',             image: whichone },
-          { name: 'X-market',            url: 'https://x-market.trade',     image: xmarket },
-        ],
-      },
-    }
-  }
-
   render() {
-    const subNavigationItems = this.state.subNavigationItems[this.props.navType].map((item) => {
+    if(!this.props.histories.hasOwnProperty(this.props.navType)) { return null }
+
+    const subNavigationItems = this.props.histories[this.props.navType].map((item) => {
       return (
-        <SubNavigationItem key={`subNavigationItem_${item.name}`}>
+        <SubNavigationItem key={`subNavigationItem_${item.name}`} onClick={() => this.props.selectHistory(item.id)}>
           <img src={item.image}/>
           { item.name }
         </SubNavigationItem>
