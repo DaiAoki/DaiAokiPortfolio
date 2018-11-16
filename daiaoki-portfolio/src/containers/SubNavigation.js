@@ -5,7 +5,7 @@ import SubNavigation from '../components/layout/SubNavigation'
 function mapStateToProps(state) {
   return {
     navType:   state.layoutReducer.navType,
-    histories: state.historyReducer.histories,
+    subItems:  state.subItemReducer.subItems,
   }
 }
 

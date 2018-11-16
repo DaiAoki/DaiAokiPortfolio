@@ -22,33 +22,44 @@ const HistoryItem = styled.a`
   }
 `
 const HistoryImage = styled.img`
-  width: 50%;
   height: 50%;
-  border-radius: 4px;
-  text-shadow: 5px 5px 8px black;
-  margin-bottom: ${NUMBERs.MAGICK_NUMBER};
+  border-radius: 10px;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
   object-fit: contain;
+  margin-bottom: ${NUMBERs.MAGICK_NUMBER};
 `
 const HistoryName = styled.p`
   font-size: 2.4rem;
+  text-shadow: 3px 3px 5px black;
   margin-bottom: 6px;
 `
 const HistoryUrl = styled.p`
   font-size: 2.0rem;
+  text-shadow: 2px 2px 3px black;
+`
+const Arrow = styled.p`
+  font-size: 4.0rem;
+  padding: ${NUMBERs.MAGICK_NUMBER};
+  cursor: pointer;
+  &:hover {
+    color: yellow;
+  }
 `
 class History extends React.Component {
   render() {
-    var selectedHistory = this.props.histories['/history'].filter((history) => {
+    var selectedHistory = this.props.subItems['/history'].filter((history) => {
       return history.id === this.props.selectedHistoryId
     })[0]
     return (
       <CenteredContainer>
         <FieldContainer>
+          <Arrow onClick={() => this.props.changeHistory(selectedHistory.id, -1)}>{`<`}</Arrow>
           <HistoryItem href={selectedHistory.url} target='blank'>
             <HistoryImage src={selectedHistory.image}/>
             <HistoryName>{ selectedHistory.name }</HistoryName>
             <HistoryUrl>{`(${selectedHistory.url})`}</HistoryUrl>
           </HistoryItem>
+          <Arrow onClick={() => this.props.changeHistory(selectedHistory.id, 1)}>{`>`}</Arrow>
         </FieldContainer>
       </CenteredContainer>
     )

@@ -45,7 +45,14 @@ class MessageBox extends React.Component {
     super(props)
     this.state = {
       messages: {
-        '/history': 'これまでの開発実績です。RailsとReactが得意です。\nバックエンド・フロントエンド・インフラ全てできます。'
+        '/contact': '各種SNSアカウントです。\nお仕事のご依頼等はこちらでお願いします。',
+        '/omajinai': '',
+        '/item': '',
+        '/history': 'これまでの開発実績です。RailsとReactが得意です。\nバックエンド・フロントエンド・インフラ全てできます。',
+        '/equipment': '',
+        '/search': '',
+        '/status': '',
+        '/tactics': '',
       },
     }
   }

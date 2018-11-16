@@ -34,9 +34,9 @@ const SubNavigationItem = styled.li`
 `
 class SubNavigation extends React.Component {
   render() {
-    if(!this.props.histories.hasOwnProperty(this.props.navType)) { return null }
+    if(!this.props.subItems.hasOwnProperty(this.props.navType)) { return null }
 
-    const subNavigationItems = this.props.histories[this.props.navType].map((item) => {
+    const subNavigationItems = this.props.subItems[this.props.navType].map((item) => {
       return (
         <SubNavigationItem key={`subNavigationItem_${item.name}`} onClick={() => this.props.selectHistory(item.id)}>
           <img src={item.image}/>

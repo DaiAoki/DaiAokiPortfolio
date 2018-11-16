@@ -19,7 +19,7 @@ const ContactItem = styled.li`
   width: 24%;
   img {
     width: 100%;
-    text-shadow: 5px 5px 8px black;
+    filter: drop-shadow(6px 6px 6px rgba(0,0,0,0.6));
   }
   &:hover {
     animation: ${ANIMATIONs.MONSTER} 2.0s linear infinite;
@@ -30,8 +30,8 @@ class Contact extends React.Component {
     super(props)
     this.state = {
       contactItems: [
-        { name: 'GitHub',   image: github,   url: 'https://github.com/DaiAoki' },
-        { name: 'Twitter',  image: twitter,  url: 'https://twitter.com/DaiAoki30' },
+        { name: 'GitHub',   image: github,   url: 'https://github.com/DaiAoki'           },
+        { name: 'Twitter',  image: twitter,  url: 'https://twitter.com/DaiAoki30'        },
         { name: 'Facebook', image: facebook, url: 'https://www.facebook.com/dai.aoki.94' },
       ],
     }
