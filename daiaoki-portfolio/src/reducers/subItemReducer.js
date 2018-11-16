@@ -8,12 +8,12 @@ import xmarket    from '../assets/images/no_image.png'
 const initialState = {
   subItems: {
     '/history': [
-      { id: 1, name: 'ポートフォリオ',      url: 'https://daiaoki.me',         image: portfolio  },
-      { id: 2, name: 'Anny',                url: 'https://anny.gift/',         image: anny       },
-      { id: 3, name: 'BookHub',             url: 'https://bookhub.jp',         image: bookhub    },
-      { id: 4, name: 'スタートアップのGit', url: 'http://www.startup-git.com', image: startupGit },
-      { id: 5, name: 'whichone',            url: 'localhost:3000',             image: whichone   },
-      { id: 6, name: 'X-market',            url: 'https://x-market.trade',     image: xmarket    },
+      { id: 1, name: 'ポートフォリオ',      url: 'https://github.com/DaiAoki/DaiAokiPortfolio', image: portfolio  },
+      { id: 2, name: 'Anny',                url: 'https://anny.gift/',                          image: anny       },
+      { id: 3, name: 'BookHub',             url: 'https://bookhub.jp',                          image: bookhub    },
+      { id: 4, name: 'スタートアップのGit', url: 'http://www.startup-git.com',                  image: startupGit },
+      { id: 5, name: 'whichone',            url: 'localhost:3000',                              image: whichone   },
+      { id: 6, name: 'X-market',            url: 'https://x-market.trade',                      image: xmarket    },
     ],
   },
   selectedHistoryId: 1,
