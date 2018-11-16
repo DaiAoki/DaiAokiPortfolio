@@ -14,6 +14,7 @@ const StyledMessageBox = styled.div`
   border-radius: 4px;
   padding: 2px;
   opacity: 0.8;
+  display: ${ props => props.isDisplay ? 'block' : 'none' };
 `
 const StyledMessageBoxInner = styled.div`
   border: solid 4px #fff;
@@ -27,6 +28,18 @@ const StyledMessageBoxInner = styled.div`
   word-wrap: break-word;
   white-space: pre-wrap;"
 `
+
+var timerId
+function TypeWriter(_object, message) {
+  var messageLength = message.length
+  timerId = setInterval(function() {
+    _object.innerHTML = message.substr(0, message.length - messageLength)
+    messageLength--
+    if(messageLength < 0) {
+      clearInterval(timerId)
+    }
+  }, 60)
+}
 class MessageBox extends React.Component {
   constructor(props) {
     super(props)
@@ -37,19 +50,23 @@ class MessageBox extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const msgBox = document.getElementById('msgBox')
+    const message = this.state.messages[this.props.currentPath] || ''
+    TypeWriter(msgBox, message)
+  }
+
   componentWillReceiveProps(nextProps) {
-    if(nextProps.tutorial === false || nextProps.forceTutorial === true) {
-      this.setState({open: true})
-    }
+    clearInterval(timerId)
+    const msgBox = document.getElementById('msgBox')
+    const message = this.state.messages[nextProps.currentPath] || ''
+    TypeWriter(msgBox, message)
   }
 
   render() {
-    const message = this.state.messages[this.props.currentPath]
     return (
-      <StyledMessageBox>
-        <StyledMessageBoxInner id='msgBox'>
-          { message }
-        </StyledMessageBoxInner>
+      <StyledMessageBox isDisplay={!(this.props.currentPath === '/')}>
+        <StyledMessageBoxInner id='msgBox' />
       </StyledMessageBox>
     )
   }
