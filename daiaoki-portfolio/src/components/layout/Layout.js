@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import COLORs from '../../shared/colors'
 import Navigation from './Navigation'
@@ -7,14 +8,27 @@ import Navigation from './Navigation'
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: ${COLORs.NATURAL_WHITE};
   position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -25%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 125%;
+    width: 100%;
+    background-color: ${COLORs.BASE_COLOR};
+    opacity: 0.7;
+    z-index: -1;
+    display: ${ props => props.gradient ? 'block' : 'none' };
+  }
 `
 class Layout extends React.Component {
   render() {
     return (
-      <Container>
-        <Navigation/>
+      <Container gradient={this.props.currentPath !== '/'}>
+        <Navigation currentPath={this.props.currentPath}/>
         <main>
           {this.props.children}
         </main>

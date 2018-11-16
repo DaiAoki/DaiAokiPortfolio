@@ -1,8 +1,5 @@
 html {
   font-size: 62.5%;
-  @media only screen and (max-width: 768px) {
-    overflow-x: hidden;
-  }
 }
 body {
   color: #fafafa;
@@ -11,6 +8,10 @@ body {
   -webkit-text-size-adjust: none;
   letter-spacing: 1px;
   margin: 0;
+  background-image: url("../../images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 *, *::before, *::after {
   box-sizing: border-box;

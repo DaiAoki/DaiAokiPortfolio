@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import SubNavigation from '../../containers/SubNavigation'
+import TotalPlayingTime from './TotalPlayingTime'
 import COLORs from '../../shared/colors'
 import NUMBERs from '../../shared/number'
 import sword from '../../assets/images/sword.svg'
@@ -14,7 +16,8 @@ const StyledNavigation = styled.nav`
   background-color: ${COLORs.BASE_COLOR};
   border-radius: 4px;
   padding: 2px;
-  opacity: 0.9;
+  opacity: 0.8;
+  display: ${ props => props.isDisplay ? 'block' : 'none' };
 `
 const NavigationInner = styled.div`
   border: solid 4px #fff;
@@ -29,6 +32,7 @@ const NavigationList = styled.div`
 const NavigationItem = styled(NavLink)`
   flex-basis: 50%;
   width: 50%;
+  line-height: 1.5;
   margin-bottom: ${NUMBERs.MAGICK_NUMBER};
   position: relative;
   &:nth-child(7), &:nth-child(8) {
@@ -37,12 +41,7 @@ const NavigationItem = styled(NavLink)`
   &:hover {
     color: yellow;
   }
-  &.active {
-    color: yellow;
-    img {
-      display: block;
-    }
-  }
+  ${props => props.active ? 'color: yellow; img{display: block;}' : ''}
 `
 const CurrentMark = styled.img`
   display: none;
@@ -52,20 +51,6 @@ const CurrentMark = styled.img`
   transform: translateY(-50%) rotate(45deg);
   width: 26px;
   height: 26px;
-`
-const TotalPlayingTime = styled.div`
-  position: absolute;
-  top: ${NUMBERs.MAGICK_NUMBER};
-  right: ${NUMBERs.MAGICK_NUMBER};
-  background-color: ${COLORs.BASE_COLOR};
-  border-radius: 4px;
-  padding: 2px;
-  opacity: 0.9;
-`
-const TotalPlayingTimeInner = styled.div`
-  border: solid 4px #fff;
-  border-radius: 4px;
-  padding: ${NUMBERs.MAGICK_NUMBER};
 `
 class Navigation extends React.Component {
   constructor(props) {
@@ -77,32 +62,13 @@ class Navigation extends React.Component {
         { name: 'そうび', path: '/equipment' }, { name: 'しらべる', path: '/search'   },
         { name: 'つよさ', path: '/status'    }, { name: 'さくせん', path: '/tactics'  },
       ],
-      totalTime: ''
     }
-  }
-
-  componentWillMount() {
-    const componentThis = this
-    var zeroFill = function(num) {
-      return num < 10 ? `0${num}` : num
-    }
-    setInterval(function() {
-      var diff = (new Date().getTime()) - (new Date("2015/9/1").getTime())
-      var nowYear  = Math.floor(diff / NUMBERs.YEAR_NUM)
-      var nowMonth = Math.floor((diff % NUMBERs.YEAR_NUM)  / NUMBERs.MONTH_NUM)
-      var nowDay   = Math.floor((diff % NUMBERs.MONTH_NUM) / NUMBERs.DAY_NUM)
-      var nowHour  = Math.floor((diff % NUMBERs.DAY_NUM)   / NUMBERs.HOUR_NUM)
-      var nowMin   = zeroFill(Math.floor((diff % NUMBERs.HOUR_NUM) / NUMBERs.MIN_NUM))
-      var nowSec   = zeroFill(Math.floor((diff % NUMBERs.MIN_NUM)  / NUMBERs.SEC_NUM))
-      var total = `${nowYear}年${nowMonth}ヶ月${nowDay}日${nowHour}時間${nowMin}分${nowSec}秒`
-      componentThis.setState({ totalTime: total })
-    }, 1000)
   }
 
   render() {
     const navigationItems = this.state.navItems.map((item) => {
       return (
-        <NavigationItem key={`navigationItem_${item.path}`} to={item.path}>
+        <NavigationItem key={`navigationItem_${item.path}`} to={item.path} active={this.props.currentPath === item.path}>
           <CurrentMark src={sword}/>
           { item.name }
         </NavigationItem>
@@ -110,16 +76,15 @@ class Navigation extends React.Component {
     })
     return (
       <React.Fragment>
-        <StyledNavigation>
+        <StyledNavigation isDisplay={!(this.props.currentPath === '/')}>
           <NavigationInner>
             <NavigationList>
               { navigationItems }
             </NavigationList>
           </NavigationInner>
         </StyledNavigation>
-        <TotalPlayingTime>
-          <TotalPlayingTimeInner>{`総プレイ時間： ${this.state.totalTime}`}</TotalPlayingTimeInner>
-        </TotalPlayingTime>
+        <SubNavigation/>
+        <TotalPlayingTime currentPath={this.props.currentPath}/>
       </React.Fragment>
     )
   }
