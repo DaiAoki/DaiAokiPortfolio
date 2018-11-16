@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import COLORs from '../../shared/colors'
 import Navigation from './Navigation'
+import MessageBox from './MessageBox'
 
 const Container = styled.div`
   height: 100vh;
@@ -32,6 +33,7 @@ class Layout extends React.Component {
         <main>
           {this.props.children}
         </main>
+        <MessageBox currentPath={this.props.currentPath}/>
       </Container>
     )
   }
