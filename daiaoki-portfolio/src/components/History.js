@@ -4,7 +4,6 @@ import CenteredContainer from './general/CenteredContainer'
 import COLORs from '../shared/colors'
 import { media } from '../shared/media'
 import NUMBERs from '../shared/number'
-import ScrollToTopOnMount from './general/ScrollToTopOnMount'
 import field from '../assets/images/field.png'
 
 const ServiceContainer = styled.div`

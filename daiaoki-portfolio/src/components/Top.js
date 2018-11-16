@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import COLORs from '../shared/colors'
 import ANIMATIONs from '../shared/animations'
 import { media } from '../shared/media'
-import ScrollToTopOnMount from './general/ScrollToTopOnMount'
 
 const TopContainer = styled.div`
   width: 100vw;
@@ -29,7 +28,6 @@ class Top extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <ScrollToTopOnMount/>
         <TopContainer>
           <StartEngineerLife to="/status">冒険する</StartEngineerLife>
         </TopContainer>
