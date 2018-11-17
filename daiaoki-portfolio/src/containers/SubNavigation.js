@@ -13,6 +13,9 @@ function mapDispatchToProps(dispatch) {
   return {
     selectHistory(id) {
       dispatch({type: 'SELECT_HISTORY', id})
+    },
+    selectTactics(id) {
+      dispatch({type: 'SELECT_TACTICS', id})
     }
   }
 }

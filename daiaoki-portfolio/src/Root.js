@@ -16,7 +16,7 @@ import History   from './containers/History'
 import Equipment from './containers/Equipment'
 import Search    from './components/Search'
 import Status    from './containers/Status'
-import Tactics   from './components/Tactics'
+import Tactics   from './containers/Tactics'
 
 const history = createBrowserHistory()
 const store   = Store(history)

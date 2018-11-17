@@ -13,6 +13,7 @@ import headphone  from '../assets/images/headphone.png'
 import emacs      from '../assets/images/emacs.png'
 import slack      from '../assets/images/slack.png'
 import sequelpro  from '../assets/images/sequelpro.png'
+import hoge       from '../assets/images/no_image.png'
 
 const initialState = {
   subItems: {
@@ -45,8 +46,15 @@ const initialState = {
       { id: 3, name: 'インフラ',       skills: ['AWS', 'Firebase', 'Heroku']                       },
       { id: 4, name: 'その他',         skills: ['MySQL', 'Git', 'SEO']                             },
     ],
+    '/tactics': [
+      { id: 1, name: 'ガンガンいこうぜ', image: hoge },
+      { id: 2, name: 'いろいろやろうぜ', image: hoge },
+      { id: 3, name: 'いのちをだいじに', image: hoge },
+      { id: 4, name: 'めいれいさせろ',   image: hoge },
+    ],
   },
   selectedHistoryId: 1,
+  selectedTacticsId: 1,
 }
 
 export default function subItemReducer(state = initialState, action) {
@@ -60,6 +68,11 @@ export default function subItemReducer(state = initialState, action) {
     return {
       ...state,
       selectedHistoryId: action.id,
+    }
+  case 'SELECT_TACTICS':
+    return {
+      ...state,
+      selectedTacticsId: action.id
     }
   default:
     return state
