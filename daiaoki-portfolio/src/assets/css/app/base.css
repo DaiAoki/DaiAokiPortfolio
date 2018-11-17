@@ -1,5 +1,8 @@
 html {
   font-size: 62.5%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 body {
   color: #fafafa;
@@ -7,9 +10,10 @@ body {
   font-size: 1.6rem;
   -webkit-text-size-adjust: none;
   letter-spacing: 1px;
+  width: 100%;
+  height: 100%;
   margin: 0;
-  background-image: url("../../images/background.png");
-  background-repeat: no-repeat;
+  background: #121212 url("../../images/background.png") no-repeat center center;
   background-size: cover;
   overflow: hidden;
 }

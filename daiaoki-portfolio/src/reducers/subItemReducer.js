@@ -39,6 +39,12 @@ const initialState = {
       { id: 2, name: 'Slack',     image: slack     },
       { id: 3, name: 'SequelPro', image: sequelpro },
     ],
+    '/status': [
+      { id: 1, name: 'フロントエンド', skills: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'React']    },
+      { id: 2, name: 'バックエンド',   skills: ['Ruby', 'C', 'Java', 'Lisp', 'PHP', 'ShellScript'] },
+      { id: 3, name: 'インフラ',       skills: ['AWS', 'Firebase', 'Heroku']                       },
+      { id: 4, name: 'その他',         skills: ['MySQL', 'Git', 'SEO']                             },
+    ],
   },
   selectedHistoryId: 1,
 }
