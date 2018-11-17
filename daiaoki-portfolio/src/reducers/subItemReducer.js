@@ -1,3 +1,6 @@
+import github     from '../assets/images/github-icon.png'
+import twitter    from '../assets/images/twitter-icon.png'
+import facebook   from '../assets/images/facebook-icon.png'
 import portfolio  from '../assets/images/portfolio.png'
 import anny       from '../assets/images/anny.png'
 import bookhub    from '../assets/images/bookhub.png'
@@ -13,6 +16,11 @@ import sequelpro  from '../assets/images/sequelpro.png'
 
 const initialState = {
   subItems: {
+    '/contact': [
+      { id: 1, name: 'GitHub',   image: github,   url: 'https://github.com/DaiAoki'           },
+      { id: 2, name: 'Twitter',  image: twitter,  url: 'https://twitter.com/DaiAoki30'        },
+      { id: 3, name: 'Facebook', image: facebook, url: 'https://www.facebook.com/dai.aoki.94' },
+    ],
     '/history': [
       { id: 1, name: 'ポートフォリオ',      url: 'https://github.com/DaiAoki/DaiAokiPortfolio', image: portfolio  },
       { id: 2, name: 'Anny',                url: 'https://anny.gift/',                          image: anny       },

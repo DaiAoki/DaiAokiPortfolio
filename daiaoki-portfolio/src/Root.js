@@ -9,7 +9,7 @@ import './assets/css/App.css'
 
 import Layout    from './containers/Layout'
 import Top       from './components/Top'
-import Contact   from './components/Contact'
+import Contact   from './containers/Contact'
 import Omajinai  from './components/Omajinai'
 import Item      from './containers/Item'
 import History   from './containers/History'
