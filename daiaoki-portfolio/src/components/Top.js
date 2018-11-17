@@ -6,7 +6,7 @@ import ANIMATIONs from '../shared/animations'
 import { media } from '../shared/media'
 
 const TopContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: ${COLORs.BASE_COLOR};
   position: relative;
@@ -29,11 +29,9 @@ class Top extends React.Component {
     // ボタンを押したら、冒険するという文字が回転して拡大して広がるアニメーションを入れる。
     // デフォのlinkを無効にして、classを付け替えて実装する
     return (
-      <React.Fragment>
-        <TopContainer>
-          <StartEngineerLife to="/status">冒険する</StartEngineerLife>
-        </TopContainer>
-      </React.Fragment>
+      <TopContainer>
+        <StartEngineerLife to="/status">冒険する</StartEngineerLife>
+      </TopContainer>
     )
   }
 }
