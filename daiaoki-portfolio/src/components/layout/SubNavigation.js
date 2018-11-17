@@ -23,6 +23,7 @@ const SubNavigationItem = styled.li`
   align-items: center;
   line-height: 1.5;
   cursor: pointer;
+  ${ props => props.active ? 'color: yellow;' : '' }
   &:hover {
     color: yellow;
   }
@@ -36,6 +37,7 @@ class SubNavigation extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
+    this.isActive    = this.isActive.bind(this)
   }
 
   handleClick(id) {
@@ -47,12 +49,22 @@ class SubNavigation extends React.Component {
     }
   }
 
+  isActive(id) {
+    if(this.props.navType === '/history') {
+      console.log(this.props.selectedHistoryId === id ? true : false)
+      return this.props.selectedHistoryId === id ? true : false
+    }
+    else if(this.props.navType === '/tactics') {
+      return this.props.selectedTacticsId === id ? true : false
+    }
+  }
+
   render() {
     if(!this.props.subItems.hasOwnProperty(this.props.navType)) { return null }
 
     const subNavigationItems = this.props.subItems[this.props.navType].map((item) => {
       return (
-        <SubNavigationItem key={`subNavigationItem_${item.name}`} onClick={() => this.handleClick(item.id)}>
+        <SubNavigationItem key={`subNavigationItem_${item.name}`} active={this.isActive(item.id)} onClick={() => this.handleClick(item.id)}>
           <img src={item.image}/>
           { item.name }
         </SubNavigationItem>

@@ -4,8 +4,10 @@ import SubNavigation from '../components/layout/SubNavigation'
 
 function mapStateToProps(state) {
   return {
-    navType:   state.layoutReducer.navType,
-    subItems:  state.subItemReducer.subItems,
+    navType:           state.layoutReducer.navType,
+    subItems:          state.subItemReducer.subItems,
+    selectedHistoryId: state.subItemReducer.selectedHistoryId,
+    selectedTacticsId: state.subItemReducer.selectedTacticsId,
   }
 }
 
