@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import styled from 'styled-components'
 import COLORs from '../../shared/colors'
+import { media } from '../../shared/media'
 import NUMBERs from '../../shared/number'
 
 const StyledTotalPlayingTime = styled.div`
@@ -13,11 +14,20 @@ const StyledTotalPlayingTime = styled.div`
   padding: 2px;
   opacity: 0.9;
   display: ${ props => props.isDisplay ? 'block' : 'none' };
+  ${ media.sp`
+    right: calc(${NUMBERs.MAGICK_NUMBER} * 4);
+    width: calc(100vw - (${NUMBERs.MAGICK_NUMBER} * 5));
+  `}
 `
 const TotalPlayingTimeInner = styled.div`
   border: solid 4px #fff;
   border-radius: 4px;
   padding: ${NUMBERs.MAGICK_NUMBER};
+  ${ media.sp`
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  `}
 `
 class TotalPlayingTime extends React.Component {
   constructor(props) {

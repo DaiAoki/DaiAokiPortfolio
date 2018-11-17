@@ -13,5 +13,11 @@ const ANIMATIONs = {
   NOMORE_TWO: keyframes`
     0%{transform: translateY(-100%) rotate(-50deg)} 10%{transform: translateY(-100%) rotate(40deg)} 14%{transform: translateY(-100%) rotate(35deg)} 20%{transform: translateY(-100%) rotate(-30deg)} 23%{transform: translateY(-100%) rotate(-20deg)} 26%{transform: translateY(-100%) rotate(15deg)} 30%{transform: translateY(-100%) rotate(-5deg)} 32%{transform: translateY(-100%) rotate(0deg)} 100%{transform: translateY(-100%) rotate(0deg)}
   `,
+  MENU_ICON: keyframes`
+  0%{transform: scale(1) rotate(0deg)} 5%{transform: scale(1) rotate(0deg)} 7%{transform: scale(1.3) rotate(0deg)} 10%{transform: scale(1.3) rotate(0deg)} 15%{transform: scale(1) rotate(0deg)}
+  20%{transform: scale(1) rotate(0deg)} 22%{transform: scale(1.3) rotate(0deg)} 25%{transform: scale(1.3) rotate(0deg)} 30%{transform: scale(1) rotate(0deg)}
+  40%{transform: scale(1) rotate(0deg)} 50%{transform: scale(1) rotate(360deg)}
+  100%{transform: rotate(0deg)}
+  `,
 }
 export default ANIMATIONs

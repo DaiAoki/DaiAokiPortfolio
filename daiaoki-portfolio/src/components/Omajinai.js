@@ -13,6 +13,10 @@ const NoMore = styled.p`
     transform: translateY(-100%);
     animation: ${ANIMATIONs.NOMORE_TWO} 3.0s linear;
   }
+  ${ media.sp`
+    font-size: 2.6rem;
+    text-shadow: 2px 2px 4px black;
+  `}
 `
 class Omajinai extends React.Component {
   render() {

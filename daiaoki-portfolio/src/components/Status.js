@@ -11,6 +11,10 @@ const StatusWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   line-height: 1.6;
+  ${ media.sp`
+    line-height: 1.3;
+    font-size: 1.3rem;
+  `}
 `
 const StatusContainer = styled.div`
   background-color: ${COLORs.BASE_COLOR};
@@ -22,12 +26,19 @@ const BlackInner = styled.div`
   border: solid 4px #fff;
   border-radius: 4px;
   padding: ${ props => props.width ? `${NUMBERs.MAGICK_NUMBER} calc(${NUMBERs.MAGICK_NUMBER} * 4) ${NUMBERs.MAGICK_NUMBER} calc(${NUMBERs.MAGICK_NUMBER} * 2);` : `${NUMBERs.MAGICK_NUMBER};` }
+  ${ media.sp`
+    padding: ${NUMBERs.MAGICK_NUMBER};
+  `}
 `
 const ProfileHeader = styled.p`
   img {
     height: 18px;
     vertical-align: middle;
     margin-right: 6px;
+    ${ media.sp`
+      height: 15px;
+      margin-right: 5px;
+    `}
   }
 `
 const EquipP = styled.p`
@@ -38,6 +49,9 @@ const EquipP = styled.p`
 `
 const StatusItem = styled.p`
   letter-spacing: 3px;
+  ${ media.sp`
+    letter-spacing: 1px;
+  `}
 `
 class Status extends React.Component {
   render() {

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import COLORs from '../../shared/colors'
 import Navigation from './Navigation'
 import MessageBox from './MessageBox'
+import { media } from '../../shared/media'
 
 const Container = styled.div`
   height: 100vh;

@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import styled from 'styled-components'
 import COLORs from '../../shared/colors'
 import NUMBERs from '../../shared/number'
+import { media } from '../../shared/media'
 
 const StyledSubNavigation = styled.nav`
   position: absolute;
@@ -12,6 +13,12 @@ const StyledSubNavigation = styled.nav`
   border-radius: 4px;
   padding: 2px;
   opacity: 0.8;
+  ${ media.tablet`
+    transform: translateY(50%);
+  `}
+  ${ media.sp`
+    display: none;
+  `}
 `
 const SubNavigationList = styled.ul`
   border: solid 4px #fff;
@@ -51,7 +58,6 @@ class SubNavigation extends React.Component {
 
   isActive(id) {
     if(this.props.navType === '/history') {
-      console.log(this.props.selectedHistoryId === id ? true : false)
       return this.props.selectedHistoryId === id ? true : false
     }
     else if(this.props.navType === '/tactics') {

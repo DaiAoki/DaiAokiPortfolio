@@ -7,13 +7,13 @@ export const media = {
     }
   `,
   tablet: (...args) => css`
-    @media (min-width: 729px) and (max-width: 1238px) {
+    @media (min-width: 729px) and (max-width: 979px) {
       ${ css(...args) }
     }
   `,
   pc: (...args) => css`
-    @media (min-width: 1239) {
+    @media (min-width: 980px) {
       ${  css(...args) }
     }
-  `
+  `,
 }
