@@ -26,6 +26,8 @@ const StartEngineerLife = styled(Link)`
 `
 class Top extends React.Component {
   render() {
+    // ボタンを押したら、冒険するという文字が回転して拡大して広がるアニメーションを入れる。
+    // デフォのlinkを無効にして、classを付け替えて実装する
     return (
       <React.Fragment>
         <TopContainer>

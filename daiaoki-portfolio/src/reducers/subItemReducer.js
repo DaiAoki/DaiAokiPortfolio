@@ -4,6 +4,9 @@ import bookhub    from '../assets/images/bookhub.png'
 import startupGit from '../assets/images/startup-git.png'
 import whichone   from '../assets/images/whichone.png'
 import xmarket    from '../assets/images/no_image.png'
+import macbookpro from '../assets/images/macbookpro.png'
+import hyperjuice from '../assets/images/hyperjuice.png'
+import headphone  from '../assets/images/headphone.png'
 
 const initialState = {
   subItems: {
@@ -14,6 +17,11 @@ const initialState = {
       { id: 4, name: 'スタートアップのGit', url: 'http://www.startup-git.com',                  image: startupGit },
       { id: 5, name: 'whichone',            url: 'localhost:3000',                              image: whichone   },
       { id: 6, name: 'X-market',            url: 'https://x-market.trade',                      image: xmarket    },
+    ],
+    '/item': [
+      { id: 1, name: 'MacBookPro', image: macbookpro },
+      { id: 2, name: 'HyperJuice', image: hyperjuice },
+      { id: 3, name: 'WH-1000XM2', image: headphone  },
     ],
   },
   selectedHistoryId: 1,
