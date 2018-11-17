@@ -64,10 +64,14 @@ const CurrentMark = styled.img`
   height: 26px;
 `
 const NavigationButton = styled.label`
+  display: none;
   position: absolute;
   top: calc(${NUMBERs.MAGICK_NUMBER} + 4px);
   right: ${NUMBERs.MAGICK_NUMBER};
   animation: ${props => props.animation ? `${ANIMATIONs.MENU_ICON} 5.0s linear infinite;` : ''}
+  ${ media.sp`
+    display: block;
+  `}
 `
 const HiddenInput = styled.input`
   display: none;

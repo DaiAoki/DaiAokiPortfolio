@@ -25,7 +25,7 @@ const StatusContainer = styled.div`
 const BlackInner = styled.div`
   border: solid 4px #fff;
   border-radius: 4px;
-  padding: ${ props => props.width ? `${NUMBERs.MAGICK_NUMBER} calc(${NUMBERs.MAGICK_NUMBER} * 4) ${NUMBERs.MAGICK_NUMBER} calc(${NUMBERs.MAGICK_NUMBER} * 2);` : `${NUMBERs.MAGICK_NUMBER};` }
+  padding: ${NUMBERs.MAGICK_NUMBER};
   ${ media.sp`
     padding: ${NUMBERs.MAGICK_NUMBER};
   `}
@@ -47,8 +47,30 @@ const EquipP = styled.p`
     margin-right: 10px;
   }
 `
+const StatusList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 4px #fff;
+  border-radius: 4px;
+  width: 200px
+  padding: ${NUMBERs.MAGICK_NUMBER} 0;
+  padding-left: calc(${NUMBERs.MAGICK_NUMBER} * 2);
+  ${ media.pc`
+    width: 400px
+  `}
+  ${ media.sp`
+    width: 130px
+    padding: ${NUMBERs.MAGICK_NUMBER};
+  `}
+`
 const StatusItem = styled.p`
+  flex-basis: 100%;
+  width: 100%;
   letter-spacing: 3px;
+  ${ media.pc`
+    flex-basis: 50%;
+    width: 50%;
+  `}
   ${ media.sp`
     letter-spacing: 1px;
   `}
@@ -84,9 +106,9 @@ class Status extends React.Component {
             </BlackInner>
           </StatusContainer>
           <StatusContainer>
-            <BlackInner width={true}>
+            <StatusList>
               { statusItems }
-            </BlackInner>
+            </StatusList>
           </StatusContainer>
         </StatusWrapper>
       </CenteredContainer>

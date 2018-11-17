@@ -8,7 +8,7 @@ import { media } from '../../shared/media'
 
 const StyledMessageBox = styled.div`
   position: absolute;
-  top: calc(50% + 20vh + ${NUMBERs.MAGICK_NUMBER});
+  top: calc(50% + 20vh + calc(${NUMBERs.MAGICK_NUMBER} * 3));
   left: 50%;
   transform: translateX(-50%);
   background-color: ${COLORs.BASE_COLOR};
