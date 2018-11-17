@@ -5,11 +5,7 @@ import { media } from '../shared/media'
 
 class Search extends React.Component {
   render() {
-    return (
-      <div>
-        hoge
-      </div>
-    )
+    return null
   }
 }
 
