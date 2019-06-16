@@ -4,9 +4,9 @@ import facebook   from '../assets/images/facebook-icon.png'
 import portfolio  from '../assets/images/portfolio.png'
 import anny       from '../assets/images/anny.png'
 import bookhub    from '../assets/images/bookhub.png'
+import chatform   from '../assets/images/chatform.png'
 import startupGit from '../assets/images/startup-git.png'
-import whichone   from '../assets/images/whichone.png'
-import xmarket    from '../assets/images/no_image.png'
+import ctocafe    from '../assets/images/ctocafe.png'
 import macbookpro from '../assets/images/macbookpro.png'
 import hyperjuice from '../assets/images/hyperjuice.png'
 import headphone  from '../assets/images/headphone.png'
@@ -26,9 +26,10 @@ const initialState = {
       { id: 1, name: 'ポートフォリオ',      url: 'https://github.com/DaiAoki/DaiAokiPortfolio', image: portfolio  },
       { id: 2, name: 'Anny',                url: 'https://anny.gift/',                          image: anny       },
       { id: 3, name: 'BookHub',             url: 'https://bookhub.jp',                          image: bookhub    },
-      { id: 4, name: 'スタートアップのGit', url: 'http://www.startup-git.com',                  image: startupGit },
-      { id: 5, name: 'whichone',            url: 'localhost:3000',                              image: whichone   },
-      { id: 6, name: 'X-market',            url: 'https://x-market.trade',                      image: xmarket    },
+      { id: 4, name: 'ChatForm',            url: 'https://chatform.page',                       image: chatform   },
+      { id: 5, name: 'スタートアップのGit', url: 'http://www.startup-git.com',                  image: startupGit },
+      { id: 6, name: 'CTO CAFE',            url: 'https://daiaoki.cto.cafe/',                   image: ctocafe    },
+      { id: 7, name: 'OnlineSalon(WIP)',    url: 'localhost',                                   image: hoge       },
     ],
     '/item': [
       { id: 1, name: 'MacBookPro', image: macbookpro },
